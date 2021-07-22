@@ -17,7 +17,7 @@ function App() {
     }])
   }
 
-  const handleFinished = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleFinished = (e: React.ChangeEvent<HTMLInputElement>): void => {
     const id = e.currentTarget.dataset.id
     if (!id) return
     const getTodo = todosState.find(todo => todo.id === +id)
@@ -27,7 +27,7 @@ function App() {
     setTodosState([...filteredTodo, getTodo])
   }
 
-  const handleDelete = (e: React.MouseEvent<HTMLSpanElement>) => {
+  const handleDelete = (e: React.MouseEvent<HTMLSpanElement>): void => {
     const id = e.currentTarget.dataset.id
     if (!id) return
     setTodosState(todosState.filter(todo => todo.id !== +id))
